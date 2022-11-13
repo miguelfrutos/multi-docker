@@ -14,14 +14,14 @@ after_success:
     - docker build -t miguelfrutos/multi-server ./server
     - docker build -t miguelfrutos/multi-worker ./worker
 
-  #log in to the docker CLI
-  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password --stdin
+    #log in to the docker CLI
+    - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password --stdin
 
-  #make those images and push them to docker hub
-  - docker push miguelfrutos/multi-client
-  - docker push miguelfrutos/multi-nginx
-  - docker push miguelfrutos/multi-server
-  - docker push miguelfrutos/multi-worker
+    #make those images and push them to docker hub
+    - docker push miguelfrutos/multi-client
+    - docker push miguelfrutos/multi-nginx
+    - docker push miguelfrutos/multi-server
+    - docker push miguelfrutos/multi-worker
 
 # READY TO DEPLOY
 deploy:
